@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Cadastro da liga dos astronautas</h3>
+    <form action="" method="get">
+        <label for="name">Name: </label>
+        <input type="text" id="name">
+        <br>
+        <br>
+        <label for="mail">Mail: </label>
+        <input type="email" name="mail" id="mail"> - <label for="password">Password:</label> <input type="password"
+            name="mail" id="mail">
+        <br>
+        <br>
+        <label for="birth">Data de nascimento: </label>
+        <input type="date" name="birth" id="birth"> - <label for="photo">Foto: </label> <input type="file" name="photo"
+            id="photo">
+        <br><br>
+        <label for="nation-list">Nacionalidade: </label> <input list="list" name="nation-list" id="nation-list">
+        <datalist id="list">
+            <option value="Russo">
+            <option value="Brasileiro">
+            <option value="Chinês">
+        </datalist>
+        <br><br>
+        <label for="gender">Gênero: </label>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">M</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">F</label>
+        <br><br>
+        <label for="checkbox">Suas principais qualidades</label>
+        <input type="checkbox" name="int" value="inteligencia" id="inteligencia">
+        <label for="inteligencia">Inteligência | </label>
+        <input type="checkbox" name="res" value="resiliencia" id="resiliencia">
+        <label for="resiliencia">Resiliência | </label>
+        <input type="checkbox" name="fis" id="fisico" id="fisico">
+        <label for="fisico">Preparo Físico</label>
+        <br><br>
+        <input type="submit" value="Criar">
+
+    </form>
+
+
+</body>
+
+</html>
