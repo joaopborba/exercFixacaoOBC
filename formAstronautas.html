@@ -24,12 +24,13 @@
         <input type="date" name="birth" id="birth"> - <label for="photo">Foto: </label> <input type="file" name="photo"
             id="photo">
         <br><br>
-        <label for="nation-list">Nacionalidade: </label> <input list="list" name="nation-list" id="nation-list">
-        <datalist id="list">
-            <option value="Russo">
-            <option value="Brasileiro">
-            <option value="Chinês">
-        </datalist>
+        <label for="nation-list">Nacionalidade: </label> 
+        <select name="nation-list" id="nation-list">
+            <option value="Russo">Russo</option>
+            <option value="Brasileiro">Brasileiro</option>
+            <option value="Chinês">Chinês</option>
+        </select>
+
         <br><br>
         <label for="gender">Gênero: </label>
         <input type="radio" name="gender" id="male" value="male">
@@ -45,8 +46,8 @@
         <input type="checkbox" name="fis" id="fisico" id="fisico">
         <label for="fisico">Preparo Físico</label>
         <br><br>
+        <textarea name="obs" id="obs" cols="60" rows="10" placeholder="Porque você gostaria de ser astronauta?"></textarea>
         <input type="submit" value="Criar">
-
     </form>
 
 
