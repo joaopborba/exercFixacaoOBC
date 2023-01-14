@@ -32,8 +32,18 @@
         <label for="spaceships">Spaceships: </label>
         <select name="spaceships" id="spaceships">
           <option value="falcon9">Falcon9</option>
-          <option value="falconHeavy">Falcon-Heavy</option>
+          <option value="falconHeavy">Falcon-Heavy</option> 
         </select>
+        <label for="services">| Type of service: </label>
+        <input list="typeservices" id="services" name="services">
+        <datalist id="typeservices">
+          <option value="Spaceship travel">
+          <option value="Visit local">
+          <option value="Tour Spaceships">
+          <option value="Buy items">
+        </datalist>
+        <br><br>
+        <input type="submit" value="Send message">
       </form>
     </div>
   </body>
