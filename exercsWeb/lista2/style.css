@@ -1,0 +1,25 @@
+h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+p{
+    text-align: justify;
+    text-align: center;
+    border: 40px 30px 40px 30px;
+    padding: 0 70px 0 70px;
+}
+
+ul{
+    text-align: center;
+    list-style-type: none;
+}
+
+.buttons{
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
