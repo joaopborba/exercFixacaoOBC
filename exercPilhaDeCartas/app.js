@@ -3,8 +3,9 @@ let menu = "";
 
 while (menu != "3") {
   menu = prompt(
-    baralho +
-      "\nDigite a opção desejada: \n1-Adicionar uma carta\n2- Puxar uma carta\n3- Sair"
+    "Cartas no baralho: " +
+      baralho.length +
+      "\n\nDigite a opção desejada: \n1-Adicionar uma carta\n2- Puxar uma carta\n3- Sair"
   );
 
   switch (menu) {
@@ -13,7 +14,16 @@ while (menu != "3") {
       baralho.push(carta);
       break;
     case "2":
-      alert(baralho.shift());
+      if (baralho.length <= 0) {
+        alert("Não há mais cartas no baralho");
+      } else {
+        alert("Você puxou um(a) " + baralho.pop());
+      }
       break;
+    case "3":
+      alert("Finalizando...");
+      break;
+    default:
+      alert("Opção inválida!");
   }
 }
