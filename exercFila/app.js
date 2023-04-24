@@ -1,4 +1,4 @@
-let lista = ["João", "Pedro", "Amanda"];
+let lista = [];
 let menu = "";
 
 while (menu != "4") {
