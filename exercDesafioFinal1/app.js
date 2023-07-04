@@ -1,36 +1,34 @@
-let menu = "";
 const vagas = [];
 
 function listarVagas() {
-  for (let i = 0; i < vagas.length; i++) {
-    alert(
-      "Índice da vaga: " +
-        (i + 1) +
-        "\nNome da vaga: " +
-        vagas[i].nome +
-        "\nQuantidade total de inscritos: "
-    );
-  }
+    const vagasEmTexto = vagas.reduce(function(textoFinal, vaga, indice){
+        textoFinal += indice + ". "
+        textoFinal += vaga.nome
+        textoFinal += " (" + vaga.candidatos.length + " candidatos)"
+        return textoFinal;
+    }, "");
+
+    alert(vagasEmTexto);
 }
 
 function criarVaga() {
-  const vaga = {};
-  vaga.nome = prompt("Digite o nome da vaga: ");
-  vaga.descricao = prompt("Descreva a vaga ofertada: ");
-  vaga.dataLimite = prompt("Data limite (DD/MM/AA): ");
+  const nome = prompt("Digite o nome da vaga: ");
+  const descricao = prompt("Descreva a vaga ofertada: ");
+  const dataLimite = prompt("Data limite (DD/MM/AA): ");
 
   const confirmacao = confirm(
     "Deseja salvar essa vaga?" +
       "Nome da vaga: " +
-      vaga.nome +
+      nome +
       "\nDescrição da vaga: " +
-      vaga.descricao +
+      descricao +
       "\nData limite: " +
-      vaga.dataLimite
+      dataLimite
   );
 
   if (confirmacao) {
-    vagas.push(vaga);
+    const criarVaga = {nome, descricao, dataLimite, candidatos: []}
+    vagas.push(criarVaga);
     alert("Vaga salva com sucesso!");
   } else {
     alert("Voltando ao menu");
@@ -38,8 +36,13 @@ function criarVaga() {
 }
 
 function visualizarVaga() {
-  let i = prompt("Digite o indice da vaga que deseja visualizar: ");
-  i = i - 1;
+  const indice = prompt("Digite o indice da vaga que deseja visualizar: ");
+  const vaga = vagas[indice];
+
+  const candidatosEmTexto = vaga.candidatos.reduce(function(textoFinal, candidato){
+    return textoFinal + "\n - " + candidato;
+  }, "");
+
   alert(
     "Índice da vaga: " +
       (i + 1) +
