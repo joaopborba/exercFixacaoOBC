@@ -1,5 +1,5 @@
 let menu = "";
-let vagas = [];
+const vagas = [];
 
 function listarVagas() {
   for (let i = 0; i < vagas.length; i++) {
@@ -39,7 +39,45 @@ function criarVaga() {
 
 function visualizarVaga() {
   let i = prompt("Digite o indice da vaga que deseja visualizar: ");
-  alert("Índice da vaga: " + vagas[i]);
+  i = i - 1;
+  alert(
+    "Índice da vaga: " +
+      (i + 1) +
+      "\nNome da vaga: " +
+      vagas[i].nome +
+      "\nDescrição da vaga: " +
+      vagas[i].descricao +
+      "\nData Limite: " +
+      vagas[i].dataLimite +
+      "\nQuantidade de candidatos: " +
+      "\nNome dos candidatos: "
+  );
+}
+
+function inscrever() {
+  const candidato = {};
+  candidato.nome = prompt("Digite o nome do candidato: ");
+  candidato.vaga = prompt("Digite o índice da vaga escolhida: ");
+}
+
+function excluirVaga() {
+  let i = prompt("Digite o índice da vaga a ser excluída: ");
+
+  const confirmacao = confirm(
+    "Deseja realmente excluir a vaga:\n\n " +
+      "Índice da vaga: " +
+      (i + 1) +
+      "\nNome da vaga: " +
+      vagas[i].nome +
+      "\nDescrição da vaga: " +
+      vagas[i].descricao +
+      "\nData limite: " +
+      vagas[i].dataLimite
+  );
+
+  if (confirmacao) {
+    vagas[i].pop(i);
+  }
 }
 
 while (menu != "6") {
@@ -55,6 +93,7 @@ while (menu != "6") {
       criarVaga();
       break;
     case "3":
+      visualizarVaga();
       break;
     case "4":
       break;
