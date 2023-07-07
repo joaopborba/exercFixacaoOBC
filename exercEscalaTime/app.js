@@ -1,32 +1,33 @@
-function escalarJogador() {
-  const sectionList = document.getElementById("section-list");
+function addPlayer() {
+  const position = document.getElementById("position").value;
+  const name = document.getElementById("name").value;
+  const number = document.getElementById("number").value;
 
-  const ul = document.createElement("ul");
+  const confirmation = confirm(
+    "Escalar " + name + " na posição " + position + "?"
+  );
 
-  const playerPos = document.createElement("li");
-  playerPos.innerText = "Posição do jogador: ";
-  const playerInput = document.createElement("input");
-  playerInput.type = "text";
-  playerPos.appendChild(playerInput);
-  ul.appendChild(playerPos);
+  if (confirmation) {
+    const teamList = document.getElementById("playerList");
+    const playerItem = document.createElement("li");
+    playerItem.id = number;
+    playerItem.innerText = position + ": " + name + " (" + number + ")";
+    teamList.appendChild(playerItem);
 
-  const playerName = document.createElement("li");
-  playerName.innerText = "Nome do jogador: ";
-  const playerInput2 = document.createElement("input");
-  playerInput.type = "text";
-  playerName.appendChild(playerInput2);
-  ul.appendChild(playerName);
+    document.getElementById("position").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("number").value = "";
+  }
+}
 
-  const numberPlayer = document.createElement("li");
-  numberPlayer.innerText = "Número do jogador: ";
-  const numberInput = document.createElement("input");
-  numberInput.type = "number";
-  numberPlayer.appendChild(numberInput);
-  ul.appendChild(numberPlayer);
+function removePlayer() {
+  const number = document.getElementById("numberToRemove").value;
+  const playerToRemove = document.getElementById(number);
 
-  const submit = document.createElement("button");
-  submit.innerText = "Escalar";
-  ul.appendChild(submit);
+  const confirmation = confirm("Remover o " + playerToRemove.innerText + "?");
 
-  sectionList.append(ul);
+  if (confirmation) {
+    playerToRemove.remove();
+    document.getElementById("numberToRemove").value = "";
+  }
 }
