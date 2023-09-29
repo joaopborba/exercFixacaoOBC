@@ -75,5 +75,5 @@ form.addEventListener('submit', function(ev){
         row.remove();
     })
 
-    console.log(developers)
+    console.log(developers);
 })
