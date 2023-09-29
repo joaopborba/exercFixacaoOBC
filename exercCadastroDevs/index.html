@@ -7,21 +7,20 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>Cadastro de Desenvolvedores</h1>
-    <section>
-        <form id="formDev">
-            <label for="fullname">Nome completo:</label>
-            <input type="text" id="fullname" name="fullname">
-            <br><br>
-            <label>Tecnologias:</label>
-            <br><br>
-            <button id="addTech" type="button">Adicionar tecnologia</button>
-            <ul id="stackInputs"></ul>
-            <br><br><br>
-            <button id="cadastrarDevBtn" type="submit">Cadastrar</button>
-        </form>
-    </section>
-        
+    <h1>Cadastro de devs</h1>
+    <hr><br>
+    <form id="formDev">
+        <label for="nameDev">Nome completo:</label>
+        <input type="text" name="nameDev" id="nameDev">
+        <br><br><br>
+        <label for="addTech">Tecnologias:</label><br><br>
+        <button id="addTech">Adicionar tecnologia</button>
+
+        <ul id="stackInputs"></ul>
+        <br><br>
+        <button type="submit">Enviar</button>
+
+    </form>
     
 </body>
 </html>
