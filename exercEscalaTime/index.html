@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="app.js"></script>
-    <title>Escalação de Time</title>
-  </head>
-  <body>
-    <h1>Escalação de time</h1>
-    <hr />
-    <h2>Escalar um jogador:</h2>
-    <label for="position">Posição: </label>
-    <input type="text" name="position" id="position" />
-    <label for="name">Nome: </label>
-    <input type="text" name="name" id="name" />
-    <label for="number">Número do jogador: </label>
-    <input type="text" name="number" id="number" />
-    <button onclick="addPlayer()">Adicionar</button>
-    <hr />
-    <h2>Remover um jogador:</h2>
-    <label for="numberToRemove">Número: </label>
-    <input type="text" name="numberToRemove" id="numberToRemove" />
-    <button onclick="removePlayer()">Remover</button>
-    <hr />
-    <h2>Time:</h2>
-    <ul id="playerList"></ul>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalação de time</title>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <h1>Escalação de time</h1>
+  <hr>
+  <h2>Escalar um jogador:</h2>
+  <br>
+  <label for="playerName">Nome do jogador:</label>
+  <input type="text" name="playerName" id="playerName">
+  <br>
+  <label for="playerPosition">Posição do jogador: </label>
+  <input type="text" name="playerPosition" id="playerPosition">
+  <br>
+  <label for="playerNumber">Número do jogador:</label>
+  <input type="text" name="playerNumber" id="playerNumber">
+  <br><br>
+
+  <button onclick="addPlayer()">Escalar</button>
+  <br><br>
+  <label for="numberToRemove">Número a ser removido:</label>
+  <input type="text" name="numberToRemove" id="numberToRemove">
+  <br><br>
+  <button onclick="removePlayer()">Remover Jogador</button>
+
+  <hr>
+  <section>
+    <ul id="team-list"></ul>
+  </section>
+</body>
 </html>

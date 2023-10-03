@@ -1,33 +1,34 @@
-function addPlayer() {
-  const position = document.getElementById("position").value;
-  const name = document.getElementById("name").value;
-  const number = document.getElementById("number").value;
+function addPlayer(){
 
-  const confirmation = confirm(
-    "Escalar " + name + " na posição " + position + "?"
-  );
+  const playerName = document.getElementById('playerName').value;
+  const playerPosition = document.getElementById('playerPosition').value;
+  const playerNumber = document.getElementById('playerNumber').value;
 
-  if (confirmation) {
-    const teamList = document.getElementById("playerList");
-    const playerItem = document.createElement("li");
-    playerItem.id = number;
-    playerItem.innerText = position + ": " + name + " (" + number + ")";
-    teamList.appendChild(playerItem);
+  const confirmation = confirm("Escalar " + playerName + "(" + playerNumber + ") " + "na posição " + playerPosition + "?")
 
-    document.getElementById("position").value = "";
-    document.getElementById("name").value = "";
-    document.getElementById("number").value = "";
+  if(confirmation){
+    const teamList = document.getElementById('team-list');
+    const playerLi = document.createElement('li')
+    playerLi.innerText = playerName + "(" + playerNumber + ")";
+    playerLi.id = 'player-' + playerNumber;
+  
+    teamList.appendChild(playerLi);
+
+    document.getElementById('playerName').value = '';
+    document.getElementById('playerPosition').value = '';
+    document.getElementById('playerNumber').value = '';
   }
 }
 
-function removePlayer() {
-  const number = document.getElementById("numberToRemove").value;
-  const playerToRemove = document.getElementById(number);
+function removePlayer(){
+  const playerNumber = document.getElementById('numberToRemove').value;
+  const playerToRemove = document.getElementById('player-' + playerNumber);
+  const confirmation = confirm("Remover " + playerToRemove.innerText + "?")
 
-  const confirmation = confirm("Remover o " + playerToRemove.innerText + "?");
-
-  if (confirmation) {
-    playerToRemove.remove();
-    document.getElementById("numberToRemove").value = "";
+  if(confirmation){
+    document.getElementById('team-list').removeChild(playerToRemove);
+    document.getElementById('numberToRemove').value = '';
   }
+
+
 }
