@@ -36,6 +36,4 @@ function removeContact(){
 
     contactList.removeChild(titles[titles.length - 1]);
     contactList.removeChild(contacts[contacts.length - 1]);
-
-
 }
