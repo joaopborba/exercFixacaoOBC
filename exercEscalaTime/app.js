@@ -29,6 +29,4 @@ function removePlayer(){
     document.getElementById('team-list').removeChild(playerToRemove);
     document.getElementById('numberToRemove').value = '';
   }
-
-
 }
