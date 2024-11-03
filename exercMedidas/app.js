@@ -1,34 +1,30 @@
-const value = prompt("Digite o valor em metros para ser convertido");
-const measure = prompt("Digite a opção para qual deseja converter:\n\n1) milímetro(mm)\n2) centímetro(cm)\n3) decímetro(dm)\n4) decâmetro(dam)\n5) hectômetro\n6) quilômetro(km)");
-let result = 0;
+const value = parseFloat(prompt("Digite o valor em metros a ser convertido: "));
 
-switch(measure){
-    case "1":
-        result = value * 1000;
-        alert("Resultado: " + value + "m = " + result + "mm");
-        break;
-    case "2":
-        result = value * 100;
-        alert("Resultado: " + value + "m = " + result + "cm");
-        break;
-    case "3":
-        result = value * 10;
-        alert("Resultado: " + value + "m = " + result + "dm");
-        break;
-    case "4":
-        result = value / 10;
-        alert("Resultado: " + value + "m = " + result + "dam");
-        break;
-    case "5":
-        result = value / 100;
-        alert("Resultado: " + value + "m = " + result + "hm");
-        break;
-    case "6":
-        result =  value / 1000;
-        alert("Resultado: " + value + "m = " + result + "km");
-        break;
-    default:
-        alert("Opção Inválida!");
+const measure = parseFloat(
+  prompt(
+    "Escolha a opção para conversão: \n1)mm\n2)cm\n3)dm\n4)dam\n5)hm\n6)km\n"
+  )
+);
+
+switch (measure) {
+  case 1:
+    alert(value + "m equivale a " + value * 1000 + "mm");
+    break;
+  case 2:
+    alert(value + "m equivale a " + value * 100 + "cm");
+    break;
+  case 3:
+    alert(value + "m equivale a " + value * 10 + "dm");
+    break;
+  case 4:
+    alert(value + "m equivale a " + value / 10 + "dam");
+    break;
+  case 5:
+    alert(value + "m equivale a " + value / 100 + "hm");
+    break;
+  case 6:
+    alert(value + "m equivale a " + value / 1000 + "km");
+    break;
+  default:
+    alert("Opção inválida");
 }
-
-
